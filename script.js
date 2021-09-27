@@ -27,7 +27,7 @@ menuBarButton.addEventListener("click", function(){
 
       menuBarButton.innerHTML = 
       `
-      <img src="images/icon-close.svg" alt="" class="hamburger">
+      <img src="images/icon-close.svg" alt="" class="hamburger" style="transition: 0.3s; width:60%"">
       `
      
 
