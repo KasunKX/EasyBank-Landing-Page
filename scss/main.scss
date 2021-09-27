@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,700;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap');
+
+@import "./global";
+@import "./variables";
+@import "./styles.scss";
+@import "./responsive";
+
+body{
+
+   & nav{
+      width: 100%;
+      max-width: 100%;
+      height: 6vw;
+      display: grid;
+      place-items: center;
+   
+
+
+      & .navigation-container{
+         width: 80%;
+         height: 4vw;
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+
+         margin-left: 4%;
+         padding-top: 1.4vw;
+
+         & .logo-div{
+            & img{
+               position: absolute;
+               width: 10vw;
+           
+            }
+         }
+         & .nav-text-list-div{
+            & ul{
+               display: flex;
+               list-style: none;
+               width: 100%;
+               align-items: center;
+               justify-content: center;
+
+
+               & li{
+                  font-family: "Public Sans", sans-serif;
+                  font-size: 1.04vw;
+                  font-weight: 400;
+                  color: hsl(233, 8%, 62%);
+                  margin-left: 1.7vw;
+                  height: 3.3vw;
+                  cursor: pointer;
+               }
+               & li:hover{
+                  background-image: linear-gradient(45deg,hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+                  background-size: 100% 0.3vw;
+                  background-position: bottom left;
+                  background-repeat: no-repeat;
+                  background-position-y: 3vw;
+               }
+            }
+         }
+         & .nav-button{
+            @include defaultButtonContainDiv(100%);
+            ;
+            & button{
+               @include defaultButton;
+               transition: 0.3s;
+
+               left: 85%;
+               top: 1.5vw;
+            }
+            & button:hover{
+               @include  defaultButtonHover ;
+               transition: 0.3s;
+            }
+            & button:active{
+               @include defaultButtonActive ;
+               transition: 0.3s;
+            }
+         }
+      }
+
+      & .mobile-navigation-container{
+         display: none;
+      }
+      
+   }
+
+   & main{
+      width:100%;
+      max-width: 100%;
+      height: 40vw;
+      max-height: 40vw;
+      display: flex;
+
+      & .main-left{
+         width: 50%;
+         height: 100%;
+       
+         
+         & h1{
+            @include headerOne;
+            padding-top: 25%;
+            padding-left: 20%;
+         }
+         & h2{
+            @include headerTwo;
+            padding-left: 20%;
+            padding-top: 2vw;
+            line-height: 1.9vw;
+         }
+         & button{
+            @include defaultButton;
+            content: "Request Invite";
+            transition: 0.3s;
+            left: 10%;
+            margin-top: 2.5%;
+         }
+         & button:hover{
+            @include defaultButtonHover;
+         }
+         & button:active{
+            @include defaultButtonActive;
+            transition: 0.3s;
+         }
+      }
+
+      & .main-right{
+         width: 50%;
+         height: 100%;
+         background-image: url("images/bg-intro-desktop.svg");
+         background-repeat: no-repeat;
+         background-size: 200%;
+         background-position-y: -18vw;
+         position: relative;
+         z-index: 0;
+        
+
+            & .mobile-background{
+               width: 100%;
+               height: 130%;
+               background-color:transparent;
+               background-repeat: no-repeat;
+               background-size: 100%;
+               background-position-y: 100%;
+               background-position-x: 10vw;
+               margin-bottom: 10vw;
+            }
+
+      }
+
+      & .main-mobile{
+         display: none;
+      }
+
+   }
+
+   & .main-container-01{
+      width: 100%;
+      height: 45vw;
+      background-color: hsl(0, 0%, 94%);
+      display: grid;
+      place-items: center;
+
+      & .items-container-01{
+         width: 80%;
+         height: 85%;
+         
+
+         & .text-choose{
+            width: 54%;
+           
+            & h1{
+               @include headerOne;
+               font-size:2.7vw;
+               padding-top: 3vw;
+               margin-bottom: 2vw;
+               padding-left: 1.2vw
+            };
+            & h2{
+               @include headerTwo;
+               padding-left: 1.2vw;
+               font-size: 1.2vw;
+               line-height: 2vw;
+
+            
+         }
+         }
+
+         & .grid-areas-01{
+            width: 100%;
+            height: 20vw;
+            margin-top: 5vw;
+            background-color: transparent;
+            margin-left: 1vw;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 1vw;
+
+            & .box-01{
+               
+               display:block;
+
+               & img{
+                  width: 4.6vw;
+               }
+               & h1{
+                  @include headerOne;
+                  font-size: 1.8vw;
+                  color: hsl(233, 26%, 24%);
+                  font-weight: 500;
+                  margin-top: 2.4vw;
+               }
+               & h2{
+                  @include headerTwo;
+                  margin-top: 2vw;
+                  font-size: 1.01vw;
+                  font-weight: 400;
+                  line-height: 1.55vw;
+                  width:85%;
+               }
+            }
+         }
+      }
+   }
+
+   & .items-container-02{
+      width: 100%;
+      height: 45vw;
+      display: grid;
+      place-items: center;
+      background:white;
+
+
+      & .main-container-02{
+         width:80%;
+         height: 85%;
+     
+         
+         & h2{
+            @include headerOne;
+            font-size:2.7vw;
+            padding-top: 1.5vw;
+            margin-bottom: 3.2vw;
+            padding-left: 1.2vw
+         }
+
+         & .articles{
+            width: 98.56%;
+            height: 27vw;
+            
+            margin-top: 2vw;
+            display: grid;
+            grid-gap: 1.6vw;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            margin-left: 1vw;
+
+            & .art-01{
+               background-color: aliceblue;
+
+               & img{
+                  width: 99%;
+                  border-top-left-radius: .8vw;
+                  border-top-right-radius: .8vw;
+                  margin-bottom: 0;
+                  padding-bottom: 1vw;
+               }
+               & .text-art{
+                  width: 100%;
+                  height: 50%;
+       
+                  padding: 0vw;
+
+                  & .author{
+                     @include headerTwo;
+                     position: absolute;
+                     font-size: 0.8vw;
+                     margin-left: 1.2vw;
+                     margin-top: 1.5svw;
+                    
+      
+                     padding: 0;
+                  }
+                  & .auth-topic{
+                     @include headerTwo;
+                     font-weight: 300;
+                     color: rgb(5, 5, 5);
+                     padding-bottom: 0;
+                     padding-top: 2vw;
+                     margin-bottom: 0.6vw;
+                  }
+                  & .auth-topic:hover{
+                     color: hsl(136, 65%, 51%);
+                     cursor: pointer;
+                  }
+                  & .auth-desc{
+                     @include headerTwo;
+                     padding: 0;
+                     margin-left: 1.2vw;
+                     margin-top: 0;
+                     font-size: 0.9vw;
+                     line-height: 1.5vw;
+                     font-weight: 300;
+                     width:90%
+                  }
+               }
+            }
+         }
+      }
+
+   }
+
+   & .articles-mobile{
+      width: 100%;
+      height: 100vw;
+      background-color: red;
+   }
+
+   & footer{
+      width:100%;
+      height: 15vw;
+      background: hsl(234, 67%, 11%);
+      display: grid;
+      place-items: center;
+      margin-top: 10vw;
+
+      & .footer-main-container{
+         width: 80%;
+         height:8vw;
+        
+         display: grid;
+         grid-template-columns: 0.9fr 1.2fr 1.2fr 2fr;
+         grid-gap: 1vw;
+
+         & .footer-01{
+        
+         }
+         & .f1{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            & .social-icons{
+               display: flex;
+               align-items: center;
+               width:100%;
+               justify-content: space-between;
+               margin-top: 40%;
+
+               & img{
+                  width: 11%;
+               }
+               & img:hover{
+                  filter:invert(62%) sepia(97%) saturate(392%) hue-rotate(80deg) brightness(93%) contrast(86%);
+                  cursor: pointer;
+               }
+            }
+
+            & .logo{
+               width:70%;
+               filter:invert(1)
+       
+            }
+         }
+         & .f2, .f3{
+            @include headerTwo;
+            display: grid;
+            place-items: center;
+            font-size: 1.1vw;
+            
+
+            & ul{
+               list-style: none;
+
+               & li{
+                  line-height: 2.8vw;
+                  font-weight: 400;
+               }
+               & li:hover{
+                  color:hsl(192, 70%, 51%);
+                  cursor:pointer
+               }
+              
+            }
+         }
+         & .f4{
+            display: flex;
+            flex-direction: column;
+            padding-left:11vw ;
+            
+
+            & button{
+               @include defaultButton;
+               position: relative;
+               margin-bottom: 2vw;
+               margin-top: 1vw;
+               transition: 0.3s 
+            }
+            & button:hover{
+               @include defaultButtonHover;
+            }
+            & button:active{
+               @include defaultButtonActive;
+               margin-bottom: 13.5%;
+               transition: 0.3s 
+            }
+
+            & h2{
+               @include headerTwo;
+               font-size: 1vw;
+               
+           
+             
+          
+            }
+         }
+      }
+
+   }
+
+
+}
+
+.main-mobile, .items-container-01-mobile, .main-container-02-mobile, .mobile-footer{
+   display: none;
+}

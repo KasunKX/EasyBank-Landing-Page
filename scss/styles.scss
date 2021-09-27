@@ -1,0 +1,66 @@
+@mixin defaultButton {
+   position: absolute;
+   width: fit-content;
+   height: fit-content;
+   font-family: "Public Sans", sans-serif;
+   font-size: 1vw;
+   font-weight: 700;
+   padding-left: 1.7vw;
+   padding-right: 1.7vw;
+   padding-top: 0.9vw;
+   padding-bottom: 0.9vw;
+   border-radius: 2vw;
+   background: linear-gradient(45deg, hsl(136, 65%, 51%),hsl(192, 70%, 51%));
+   border: none;
+   outline: none;
+   color: white;
+   transition: 0.3s;
+};
+@mixin defaultButtonHover {
+   background: linear-gradient(45deg, hsl(136, 51%, 70%),hsl(192, 45%, 69%));
+   cursor: pointer;
+   transition: background-image 0.2s;
+};
+@mixin defaultButtonActive {
+
+   font-size: 0.7vw;
+   margin-left: 0.5vw;
+};
+@mixin defaultButtonContainDiv($height) {
+   display: grid;
+   place-items: center;
+   height: $height;
+   width:10vw;
+   transition: 0.3s;
+};
+
+@mixin headerOne{
+   font-family: "Public Sans", sans serif;
+   font-weight: 300;
+   font-size: 4vw;
+   color: hsl(233, 26%, 24%);
+};
+
+@mixin headerTwo{
+   font-family: "Public Sans", sans serif;
+   font-weight: 400;
+   font-size: 1.3vw;
+   color:  hsl(233, 8%, 62%);
+}
+@mixin defaultButtonActiveMobile {
+
+   font-size: 3vw;
+   margin-left: 0.5vw;
+};
+
+@mixin mobileDefaultButton {
+   @include defaultButton;
+
+   font-size: 4vw;
+   position: relative;
+   padding-top: 3.5vw;
+   padding-bottom: 3.5vw;
+   padding-right: 6vw;
+   padding-left: 6vw;
+   border-radius: 5vw;
+}
